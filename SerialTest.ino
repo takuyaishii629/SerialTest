@@ -1,5 +1,6 @@
 #define MODE_HELLO_WORLD    (1)
 #define MODE_HELLO_KM       (2)
+#define MODE_HELLO_NEW      (3)
 
 #define WAIT_TIME           (20) // [ms]
 
@@ -25,6 +26,9 @@ void loop()
 		else if(getstr == 'k') {
             g_display_mode = MODE_HELLO_KM;
         }
+    else{
+            g_display_mode = MODE_HELLO_NEW;
+        }
     }
 
 	if(g_count > 50) {
@@ -36,7 +40,7 @@ void loop()
         else if(g_display_mode == MODE_HELLO_KM) {
         	Serial.print("Hello KM "); // output string (and line feed)
         }
-        else {
+        else if(g_display_mode == MODE_HELLO_NEW) {
         	Serial.print("Hello ??? "); // output string (and line feed)
         }
         // display time
